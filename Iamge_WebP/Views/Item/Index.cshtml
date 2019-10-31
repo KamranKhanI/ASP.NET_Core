@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Iamge_WebP.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<a class="btn btn-info" asp-action="Create">Create New</a>
+<br />
+<div class="row">
+    @foreach (var item in Model)
+{
+    <div class="col-md-4 col-xl-4">
+        <div class="card overflow-hidden">
+           
+            <img src="@Url.Content(item.ImagePath)" width="80" height="99"/>
+            <div class="card-body">
+                <h5 class="card-title mb-3">@item.ItemName</h5>
+                <p class="card-text">@item.Descreption</p>
+                <a href="javascript:void(0);" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+    </div>
+}
+</div>
+
+
+
